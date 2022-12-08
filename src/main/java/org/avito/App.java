@@ -18,20 +18,12 @@ public class App {
         generalSearch
                 .clickElectronics("Электроника")
                 .clickOfficeEquipment("Электроника", "Оргтехника и расходники")
-                .enterSearchField("Принтер");
-
-        SearchCity searchCity = PageFactory.initElements(driver, SearchCity.class);
-
-        searchCity
+                .enterSearchField("Принтер")
                 .inputCityClick()
                 .entryCityClick("Владивосток")
                 .VladivostokClick()
-                .showAdsButtonClick();
-
-        SearchSettings searchSettings = PageFactory.initElements(driver, SearchSettings.class);
-
-        searchSettings
-
+                .showAdsButtonClick()
+                .dropDownClick()
                 .expensiveClick()
                 .showFirstThreeResults();
     }

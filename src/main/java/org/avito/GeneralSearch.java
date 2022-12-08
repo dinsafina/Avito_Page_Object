@@ -28,6 +28,9 @@ public class GeneralSearch {
             (xpath = "//input[@aria-autocomplete='list']")
     private WebElement searchField;
 
+    @FindBy
+            (xpath = "//div[@data-marker=\"search-form/region\"]")
+    private WebElement inputCity;
 
     public GeneralSearch clickElectronics(String categoryName) {
         boolean isPresent = driver.findElements(By.xpath("//select[@id = 'category']")).size() > 0;
@@ -65,5 +68,10 @@ public class GeneralSearch {
         } else {
             throw new IllegalArgumentException("empty value of the input field");
         }
+    }
+
+     public SearchCity inputCityClick() {
+        inputCity.click();
+        return new SearchCity(driver);
     }
 }

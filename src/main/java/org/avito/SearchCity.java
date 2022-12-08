@@ -16,9 +16,6 @@ public class SearchCity {
         this.driver = driver;
     }
 
-    @FindBy
-            (xpath = "//div[@data-marker=\"search-form/region\"]")
-    private WebElement inputCity;
 
     @FindBy
             (xpath = "//input[@placeholder=\"Город или регион\"]")
@@ -34,10 +31,7 @@ public class SearchCity {
     public WebElement showAdsButton;
 
 
-    public SearchCity inputCityClick() {
-        inputCity.click();
-        return this;
-    }
+
 
     public SearchCity entryCityClick(String city) {
         if (!city.isEmpty()) {
@@ -56,8 +50,8 @@ public class SearchCity {
         return this;
     }
 
-    public SearchCity showAdsButtonClick() {
+    public SearchSettings showAdsButtonClick() {
         showAdsButton.click();
-        return this;
+        return new SearchSettings(driver);
     }
 }
