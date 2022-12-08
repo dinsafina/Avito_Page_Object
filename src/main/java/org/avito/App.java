@@ -31,7 +31,7 @@ public class App {
         SearchSettings searchSettings = PageFactory.initElements(driver, SearchSettings.class);
 
         searchSettings
-                .dropDownClick()
+
                 .expensiveClick()
                 .showFirstThreeResults();
     }
